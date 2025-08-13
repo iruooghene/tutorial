@@ -1,0 +1,15 @@
+name: manual workflow
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: Greetings from ma
+   - run: echo "Good afternoon"
+  
+   
+
