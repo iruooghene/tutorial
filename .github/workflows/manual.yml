@@ -9,7 +9,7 @@ jobs:
 
    steps:
    - name: Greetings from ma
-   - run: echo "Good afternoon"
+     run: echo "Good afternoon"
   
    
 
