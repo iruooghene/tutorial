@@ -2,12 +2,16 @@ name: Hello world
 
 on:
   push:
-    branches: ["mains"]
+    branches: ["main"]
 
 jobs:
   call-manual:
     uses: ./.github/workflows/manual.yml
     with: 
+        name: Victoria
+        age: 50
+        gender: Female
+        married: true
 
   greet:
     runs-on: ubuntu-latest
