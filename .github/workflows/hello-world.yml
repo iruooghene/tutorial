@@ -1,13 +1,16 @@
 name: Hello world
 
-on: 
-  push: 
-   branches: ["main"]
+on:
+  push:
+    branches: ["mains"]
 
 jobs:
- build:
-   runs-on: ubuntu-latest
+  call-manual:
+    uses: ./.github/workflows/manual.yml
+    with: 
 
-   steps:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
       - name: Greetings from ma
         run: echo "Good afternoon"
