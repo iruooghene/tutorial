@@ -1,0 +1,14 @@
+# .github/workflows/caller.yml
+name: Caller Workflow
+
+on:
+ push:
+  branches: ["main"]
+ workflow_dispatch:
+
+jobs:
+  invoke-reusable:
+    uses: ./.github/workflows/reusable-ci.yml
+    with:
+      service_name: "my-app"
+      environment: "staging"
