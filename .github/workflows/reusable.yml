@@ -1,0 +1,33 @@
+# .github/workflows/reusable-ci.yml
+name: Reusable CI/CD Workflow
+
+on:
+  workflow_call:
+    inputs:
+      service_name:
+        description: "Name of the service being built"
+        required: true
+        type: string
+      environment:
+        description: "Target environment (dev, staging, prod)"
+        required: true
+        type: string
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Print details
+        run: |
+          echo "Service: ${{ inputs.service_name }}"
+          echo "Environment: ${{ inputs.environment }}"
+
+      - name: Build
+        run: echo "Building ${{ inputs.service_name }} for ${{ inputs.environment }} environment..."
+
+      - name: Deploy
+        run: echo "Deploying ${{ inputs.service_name }} to ${{ inputs.environment }}..."
